@@ -20,3 +20,22 @@ function getPin() {
     return getPin();
   }
 }
+
+document.getElementById("key-pad").addEventListener("click", function(e) {
+  //   console.log("clicked");
+  //   console.log(e.target.innerText);
+  const number = e.target.innerText;
+
+  const calInput = document.getElementById("calculator-field");
+  const previousValue = calInput.value;
+  //   console.log(previousValue);
+  const newNumber = previousValue + number;
+  //   console.log(newNumber);
+  calInput.value = newNumber;
+  if (isNaN(number)) {
+    // console.log(number);
+    if (number == "C") {
+      calInput.value = "";
+    }
+  }
+});
