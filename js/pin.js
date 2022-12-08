@@ -40,3 +40,17 @@ document.getElementById("key-pad").addEventListener("click", function(e) {
     calInput.value = newNumber;
   }
 });
+
+function verifyPin() {
+  const pin = document.getElementById("pin-number").value;
+  const typeNumbers = document.getElementById("calculator-field").value;
+  const successMessage = document.getElementById("notify-success");
+  const failNotification = document.getElementById("notify-fail");
+  if (pin == typeNumbers) {
+    successMessage.style.display = "block";
+    failNotification.style.display = "none";
+  } else {
+    failNotification.style.display = "block";
+    successMessage.style.display = "none";
+  }
+}
